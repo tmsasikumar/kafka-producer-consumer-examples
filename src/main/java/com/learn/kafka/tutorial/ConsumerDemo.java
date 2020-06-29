@@ -23,7 +23,7 @@ public class ConsumerDemo {
         properties.setProperty(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
         properties.setProperty(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
         properties.setProperty(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
-        properties.setProperty(ConsumerConfig.GROUP_ID_CONFIG, "my-latest-consumer-group");
+        properties.setProperty(ConsumerConfig.GROUP_ID_CONFIG, "my-latest1-new-consumer-group");
         properties.setProperty(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
 
         KafkaConsumer<String, String> consumer = new KafkaConsumer<String, String>(properties);
@@ -35,6 +35,7 @@ public class ConsumerDemo {
             for(ConsumerRecord record : records) {
                 logger.info("Key:" + record.key() + "Value:" + record.value());
                 logger.info("Partition:" + record.partition() + "Offset:" + record.offset());
+
             }
         }
     }
