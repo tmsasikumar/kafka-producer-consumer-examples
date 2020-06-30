@@ -1,4 +1,4 @@
-package com.learn.kafka.tutorial;
+package com.learn.kafka.realtime;
 
 import com.google.common.collect.Lists;
 import com.twitter.hbc.ClientBuilder;
@@ -31,7 +31,7 @@ public class TwitterProducer {
     }
 
     public void run() {
-        BlockingQueue<String> msgQueue = new LinkedBlockingQueue<String>(100);
+        BlockingQueue<String> msgQueue = new LinkedBlockingQueue<String>(10);
 
         BasicClient client = createTwitterClient(msgQueue);
         client.connect();
