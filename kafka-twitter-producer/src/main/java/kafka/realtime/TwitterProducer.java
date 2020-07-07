@@ -1,4 +1,4 @@
-package com.learn.kafka.realtime;
+package kafka.realtime;
 
 import com.google.common.collect.Lists;
 import com.twitter.hbc.ClientBuilder;
